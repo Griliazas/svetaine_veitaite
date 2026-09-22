@@ -1,0 +1,22 @@
+body {
+  background-color: rgb(225, 153, 224);
+}
+
+h1 {
+  color: rgb(113, 35, 161);
+  text-align: center;
+}
+
+p {
+  font-family: fantasy;
+  font-size: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #cf80f1;
+  color: white;
+  text-decoration: bold;
+  border-radius: 5px;
+}
