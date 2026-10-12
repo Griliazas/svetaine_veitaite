@@ -18,18 +18,21 @@
             <a href="pages/html-basics.html">HTML</a>
             <a href="pages/css-basics.html">CSS</a>
             <a href="process.html">Procesas</a>
+            <a href="pages/javascript-basics.html"> JS </a>
+            <a href="pages/gallery.html"> Galerija </a>
         </nav>
     </header>
 
     <div class="page-layout">
 
         <!-- nav side bar-->
-        <nav class="side-nav" aria-label="Šio puslapio skyriai">
+        <nav class="side-nav" aria-label="Skyriai:">
             <h3>Šiame puslapyje</h3>
             <ul>
-                <li><a href="#intro">Įvadas</a></li>
-                <li><a href="#code-example">Kodo pavyzdys</a></li>
-                <li><a href="#extra">Papildoma informacija</a></li>
+                <li><a href="#intro">Apie</a></li>
+                <li><a href="#learn">Ko išmoksite?</a></li>
+                <li><a href="#structure">Svetainės puslapiai</a></li>
+                <li><a href="#outro">Autorės žodžiai</a></li>
             </ul>
         </nav>
 
@@ -37,83 +40,59 @@
         <main>
             <article>
                 <section id="intro">
-                    <h1>Home</h1>
-                    <p>This is a home page.</p>
+                    <h1>Apie</h1>
+                    <p>Ši mokymosi svetainė skirta ISKS bendramoksliams bei žmonėms, besidomintiems Frontend įgūdžiais :]</p>
+                    <br>
+                    <hr>
                 </section>
 
-                                <section id="code-example">
-                    <h2>Kodo pavyzdys 1</h2>
-
-                    <div class="code-container">
-                        <button class="copy-btn" onclick="copyCode(this)">
-                            Copy
-                        </button>
-
-                        <pre><code>// Pirmas kodas
-                public void hello() {
-                    System.out.println("Hello!");
-                }</code></pre>
-                    </div>
-
-                    <h2>Kodo pavyzdys 2</h2>
-
-                    <div class="code-container">
-                        <button class="copy-btn" onclick="copyCode(this)">
-                            Copy
-                        </button>
-
-                        <pre><code>// Antras kodas
-                public int suma(int a, int b) {
-                    return a + b;
-                }</code></pre>
-                    </div>
-
-                </section>
+                <section id="learn">
+                    <h1>Ko išmoksite?</h1>
+                    <ul>
+                    <li>Semantinio HTML</li>
+                    <li>Pradinio CSS</li>
+                    <li>Minimalaus JS</li>
+                    </ul>
+                    <br>
+                    <hr>
                 </section>
 
-                <section id="extra">
-                    <h2>Papildoma informacija</h2>
-                    <p>Čia gali pateikti papildomą informaciją.</p>
+                <section id="structure">
+                    <h1>Svetainės puslapiai</h1>
+                    <p>Šioje svetainėje galite rasti šiuos puslapius:</p>
+                    <ol>
+                    <li>Namai (bendra informacija apie svetainę)</li>
+                    <li>HTML (semantinio HTML mokomasis puslapis)</li>
+                    <li>CSS (pradinio CSS mokomasis puslapis)</li>
+                    <li>Procesas (aprašo svetainės kūrimo procesą)</li>
+                    <li>JS (aprašo kodo kopijavimo mygtukų funkciją)</li>
+                    <li>Galerija (skirta juokučiams)</li>
+                    </ol>
+                    <br>
+                    <hr>
+                </section>                
+
+                <section id="outro">
+                    <h1>Autorės žodžiai</h1>
+                    <p>Ši svetainė toli gražu nėra tobula, tačiau siekiu, jog ją skaitydami išmoksite naudingų tinklapio kūrimo žinių ar bent pasisemsite idėjų iš svetainės dizaino ir funkcijų!</p>
+                    <br>
                 </section>
+
             </article>
         </main>
 
         <!-- anime girl gif bar -->
         <aside>
-            <p>hello</p>
             <img src="res/megumin.gif" alt="Megumin GIF">
         </aside>
 
     </div>
 
     <footer>
-        <p>Footer</p>
+        <p> <a href="mailto:ieva.jodkaite@knf.vu.lt">Susisiek :] </a> </p>
+        <p>© 2026 Ieva Jodkaitė</p>
     </footer>
 
-
-
-<script>
-
-async function copyCode(button) {
-    const container = button.closest(".code-container");
-    const code = container.querySelector("code").innerText;
-
-    try {
-        await navigator.clipboard.writeText(code);
-
-        const originalText = button.innerText;
-        button.innerText = "Nukopijuotas!";
-
-        setTimeout(() => {
-            button.innerText = originalText;
-        }, 1500);
-
-    } catch (err) {
-        console.error("Nepavyko nukopijuoti:", err);
-        alert("Nepavyko nukopijuoti kodo :(( ");
-    }
-}
-</script>
 
 
 </body>

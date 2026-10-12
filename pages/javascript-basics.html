@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veitaite</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../scripts/button_logic.js"></script>
+</head>
+<body>
+
+    <header>
+        <h2>Javascrip</h2>
+
+        <!-- nav header -->
+        <nav class="top-nav" aria-label="Pagrindinė navigacija">
+            <a href="../index.html">Namai</a>
+            <a href="../pages/html-basics.html">HTML</a>
+            <a href="../pages/css-basics.html">CSS</a>
+            <a href="../process.html">Procesas</a>
+            <a href="../pages/javascript-basics.html"> JS </a>
+            <a href="../pages/gallery.html"> Galerija </a>
+        </nav>
+    </header>
+
+    <div class="page-layout">
+
+        <!-- nav side bar-->
+        <nav class="side-nav" aria-label="Šio puslapio skyriai">
+            <h3>Šiame puslapyje</h3>
+            <ul>
+                <li><a href="#intro">Įvadas</a></li>
+                <li><a href="#code-example">Kodo pavyzdys</a></li>
+                <li><a href="#extra">Papildoma informacija</a></li>
+            </ul>
+        </nav>
+
+                <!-- hihihihihihihihi -->
+        <main>
+            <article>
+                <section id="intro">
+                    <h1>Home</h1>
+                    <p>This is a home page.</p>
+                </section>
+
+                                <section id="code-example">
+                    <h2>Kodo pavyzdys 1</h2>
+
+                    <div class="code-container">
+
+                        <pre><code>// Pirmas kodas
+                public void hello() {
+                    System.out.println("Hello!");
+                }</code></pre>
+
+                        <div class="copy-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                        </div>
+
+                    </div>
+
+                    <h2>Kodo pavyzdys 2</h2>
+
+                    <div class="code-container">
+
+                        <pre><code>// Antras kodas
+                public int suma(int a, int b) {
+                    return a + b;
+                }</code></pre>
+
+                        <div class="copy-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                        </div>
+
+                    </div>
+
+                </section>
+                </section>
+
+                <section id="extra">
+                    <h2>Papildoma informacija</h2>
+                    <p>Čia gali pateikti papildomą informaciją.</p>
+                </section>
+            </article>
+        </main>
+
+        <!-- anime girl gif bar -->
+        <aside>
+            <p>hello</p>
+            <img src="../res/csm.gif" alt="Nezuko GIF">
+        </aside>
+
+    </div>
+
+    <footer>
+        <p> <a href="mailto:ievajodkaite@gmail.com">Susisiek :] </a> </p>
+        <p>© 2026 Ieva Jodkaitė</p>
+    </footer>
+
+
+</body>
+</html>

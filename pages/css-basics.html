@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veitaite</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../scripts/button_logic.js"></script>
 </head>
 <body>
 
@@ -18,6 +19,8 @@
             <a href="../pages/html-basics.html">HTML</a>
             <a href="../pages/css-basics.html">CSS</a>
             <a href="../process.html">Procesas</a>
+            <a href="../pages/javascript-basics.html"> JS </a>
+            <a href="../pages/gallery.html"> Galerija </a>
         </nav>
     </header>
 
@@ -45,27 +48,31 @@
                     <h2>Kodo pavyzdys 1</h2>
 
                     <div class="code-container">
-                        <button class="copy-btn" onclick="copyCode(this)">
-                            Copy
-                        </button>
 
                         <pre><code>// Pirmas kodas
                 public void hello() {
                     System.out.println("Hello!");
                 }</code></pre>
+
+                        <div class="copy-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                        </div>
+
                     </div>
 
                     <h2>Kodo pavyzdys 2</h2>
 
                     <div class="code-container">
-                        <button class="copy-btn" onclick="copyCode(this)">
-                            Copy
-                        </button>
 
                         <pre><code>// Antras kodas
                 public int suma(int a, int b) {
                     return a + b;
                 }</code></pre>
+
+                        <div class="copy-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                        </div>
+
                     </div>
 
                 </section>
@@ -87,31 +94,9 @@
     </div>
 
     <footer>
-        <p>Footer</p>
+        <p> <a href="mailto:ievajodkaite@gmail.com">Susisiek :] </a> </p>
+        <p>© 2026 Ieva Jodkaitė</p>
     </footer>
-
-    <script>
-
-async function copyCode(button) {
-    const container = button.closest(".code-container");
-    const code = container.querySelector("code").innerText;
-
-    try {
-        await navigator.clipboard.writeText(code);
-
-        const originalText = button.innerText;
-        button.innerText = "Nukopijuotas!";
-
-        setTimeout(() => {
-            button.innerText = originalText;
-        }, 1500);
-
-    } catch (err) {
-        console.error("Nepavyko nukopijuoti:", err);
-        alert("Nepavyko nukopijuoti kodo :(( ");
-    }
-}
-</script>
 
 </body>
 </html>
