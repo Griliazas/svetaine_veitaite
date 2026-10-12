@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>veitaite</title>
+    <title>Bombinis pradžiamokslis</title>
+    <link rel="icon" type="image/x-icon" href="../res/Asa.jpg">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../scripts/button_logic.js"></script>
 </head>
 <body>
 
@@ -34,10 +34,20 @@
                 <li><a href="#backbone_tags">&lt;head&gt; ir &lt;body&gt;</a></li>
                 <li><a href="#text_tags">Teksto elementai</a></li>
                 <li><a href="#text_styles">Teksto stilius</a></li>
-                <li><a href="#html_tags">&lt;!DOCTYPE html&gt; ir &lt;html&gt;</a></li>
-                <li><a href="#backbone_tags">&lt;head&gt; ir &lt;body&gt;</a></li>
-                <li><a href="#html_tags">&lt;!DOCTYPE html&gt; ir &lt;html&gt;</a></li>
-                <li><a href="#backbone_tags">&lt;head&gt; ir &lt;body&gt;</a></li>
+                <li><a href="#header">&lt;header&gt;</a></li>
+                <li><a href="#nav">&lt;nav&gt;, &lt;li&gt; ir &lt;a href&gt;</a></li>
+                <li><a href="#lists">Sąrašai</a></li>
+                <li><a href="#media">Nuorodos ir vaizdai</a></li>
+                <li><a href="#tables">Lentelės!</a></li>
+                <li><a href="#main_tag">&lt;main&gt;</a></li>
+                <li><a href="#article_tag">&lt;article&gt;</a></li>
+                <li><a href="#section_tag">&lt;section&gt;</a></li>
+                <li><a href="#aside_tag">&lt;aside&gt;</a></li>
+                <li><a href="#footer_tag">&lt;footer&gt;</a></li>
+                <li><a href="#div_tag">&lt;div :[&gt;</a></li>
+                <li><a href="#forms">Formos!</a></li>
+                <li><a href="#attributes">Atributai</a></li>
+                <li><a href="#comments">Komentarai :]</a></li>
             </ul>
         </nav>
 
@@ -241,15 +251,27 @@
                             <td>Superskriptas, nukelia aukščiau, kaip per mathcad! (laipsniams).</td>
                             <td>W<sup>ao</sup>w <sup>(⇀‸↼‶)</sup></td>
                         </tr>
+                        <tr>
+                            <td><code>&lt;code&gt;</code></td>
+                            <td>Kodo gabalėliui, šrifas būna monospace (kaip ir visur čia kur matot kodą).</td>
+                            <td><code>Waow (◕‿◕)</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;abbr&gt;</code></td>
+                            <td>Santrumpa, užvedus pelę parodo pilną reikšmę (title atributas).</td>
+                            <td><abbr title="Hyper Text Markup Language">HTML</abbr> (•ᴗ•)</td>
+                        </tr>
                     </tbody>
                 </table>
+                <br>
+                <hr>
                 </section>
 
                 <!--header-->
 
                 <section id="header">
                     
-                    <h2> &lt;head&gt;</h2>
+                    <h2> &lt;header&gt;</h2>
 
                     <p> &lt;header&gt; yra blokas skirtas informacijai puslapio viršuje, kaip svetainės pavadinimui.</p>
                     <p> Header taip pat dažnai sujungiamas su nav!</p>
@@ -335,7 +357,7 @@
                 </section>
 
                 <section>
-                    <p> Taip atrodo &lt;head&gt; sekcija šios svetainės HTML: </p>
+                    <p> Taip atrodo side &lt;nav&gt; šios svetainės HTML: </p>
                 <div class="code-container">                    
                     
                 <pre><code>
@@ -348,10 +370,6 @@
                         &lt;li&gt;&lt;a href="#backbone_tags"&gt;&amp;lt;head&amp;gt; ir &amp;lt;body&amp;gt;&lt;/a&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href="#text_tags"&gt;Teksto elementai&lt;/a&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href="#text_styles"&gt;Teksto stilius&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#html_tags"&gt;&amp;lt;!DOCTYPE html&amp;gt; ir &amp;lt;html&amp;gt;&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#backbone_tags"&gt;&amp;lt;head&amp;gt; ir &amp;lt;body&amp;gt;&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#html_tags"&gt;&amp;lt;!DOCTYPE html&amp;gt; ir &amp;lt;html&amp;gt;&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#backbone_tags"&gt;&amp;lt;head&amp;gt; ir &amp;lt;body&amp;gt;&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                 &lt;/nav&gt;
                 </code></pre>
@@ -366,133 +384,563 @@
                     <hr>      
                 </section>
 
-                <section id="">
-                    
-                    <h2>Kas sudaro HTML failą?</h2>
+                <!-- ===== NAUJI SKYRIAI ===== -->
 
-                    <p> &lt;head&gt; ir &lt;body&gt; sudaro visą &lt;html&gt; stuburą.</p>
-                    <p> &lt;head&gt; yra skirtas metaduomenims - visai nematomai puslapio informacijai;</p>
-                    <p> &lt;body&gt; yra skirtas visam matomam svetainės turiniui. </p>
+                <section id="lists">
 
-                    <div class="code-container">
+                    <h2>Sąrašai: &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; ir &lt;dl&gt;</h2>
 
-                    <pre><code>
+                    <p> &lt;ul&gt; (unordered list) yra nenumeruotas sąrašas, kiekviena eilutė pažymima taškeliu.</p>
+                    <p> &lt;ol&gt; (ordered list) yra numeruotas sąrašas, kiekviena eilutė gauna skaičių.</p>
+                    <p> &lt;li&gt; (list item) yra viena sąrašo eilutė, visada rašoma viduje &lt;ul&gt; arba &lt;ol&gt;.</p>
+                    <p> &lt;dl&gt;, &lt;dt&gt; ir &lt;dd&gt; sudaro aprašymų sąrašą: terminas (dt) ir jo apibūdinimas (dd).</p>
 
-                    </code></pre>
-
-
-                    <div class="copy-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                    </div>
-
-                    </div>
-                    <p> Paaiškinimas </p> 
-                    <br>
-                    <hr>
-                </section>
-
-                <section>
-                    <p> Taip atrodo &lt;head&gt; sekcija šios svetainės HTML: </p>
-                <div class="code-container">                    
-                    
-                    <pre><code>
-
-                    </code></pre>
-
-                    <div class="copy-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                    </div>
-
-                </div>
-                    <p> Paaiškinimas </p>  
-                    <br>
-                    <hr>      
-                </section>
-
-                <section id="">
-                    
-                    <h2>Kas sudaro HTML failą?</h2>
-
-                    <p> &lt;head&gt; ir &lt;body&gt; sudaro visą &lt;html&gt; stuburą.</p>
-                    <p> &lt;head&gt; yra skirtas metaduomenims - visai nematomai puslapio informacijai;</p>
-                    <p> &lt;body&gt; yra skirtas visam matomam svetainės turiniui. </p>
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Elementas</th>
+                            <th>Ka jis dirba? :O</th>
+                            <th>Pavyzdys</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;ul&gt;</code></td>
+                            <td>Sąrašas su taškeliais, tvarka nesvarbi.</td>
+                            <td><ul><li>Waow</li><li>Waow (◠‿◠)</li></ul></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;ol&gt;</code></td>
+                            <td>Sąrašas su skaičiais, tvarka svarbi.</td>
+                            <td><ol><li>Waow</li><li>Waow (◠‿◠)</li></ol></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;dl&gt;</code></td>
+                            <td>Terminų ir jų paaiškinimų sąrašas.</td>
+                            <td><dl><dt>Waow</dt><dd>Tokia emocija (☆▽☆)</dd></dl></td>
+                        </tr>
+                    </tbody>
+                    </table>
 
                     <div class="code-container">
 
                     <pre><code>
+                    &lt;ul&gt;
+                        &lt;li&gt;Obuolys&lt;/li&gt;
+                        &lt;li&gt;Kriaušė&lt;/li&gt;
+                    &lt;/ul&gt;
 
+                    &lt;ol&gt;
+                        &lt;li&gt;Pirmas žingsnis&lt;/li&gt;
+                        &lt;li&gt;Antras žingsnis&lt;/li&gt;
+                    &lt;/ol&gt;
+
+                    &lt;dl&gt;
+                        &lt;dt&gt;HTML&lt;/dt&gt;
+                        &lt;dd&gt;Puslapio struktūra&lt;/dd&gt;
+                    &lt;/dl&gt;
                     </code></pre>
-
 
                     <div class="copy-container">
                     <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
                     </div>
 
                     </div>
-                    <p> Paaiškinimas </p> 
                     <br>
                     <hr>
                 </section>
 
-                <section>
-                    <p> Taip atrodo &lt;head&gt; sekcija šios svetainės HTML: </p>
-                <div class="code-container">                    
-                    
-                    <pre><code>
+                <section id="media">
 
-                    </code></pre>
+                    <h2>Nuorodos ir vaizdai: &lt;a&gt;, &lt;img&gt;</h2>
 
-                    <div class="copy-container">
-                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                    </div>
+                    <p> &lt;a&gt; (anchor) sukuria nuorodą. Kur ji veda sužinosim kitam elemente.. href.</p>
+                    <p> &lt;img&gt; įdeda paveikslėlį. Jis neturi uždarymo žymės, o src nurodo kelią iki failo.</p>
+                    <p> alt atributas yra paveikslėlio aprašymas, rodomas jei vaizdas neužsikrauna ir skaitomas skaitytuvų. Visada jį rašyk!</p>
 
-                </div>
-                    <p> Paaiškinimas </p>  
-                    <br>
-                    <hr>      
-                </section>
-
-                <section id="">
-                    
-                    <h2>Kas sudaro HTML failą?</h2>
-
-                    <p> &lt;head&gt; ir &lt;body&gt; sudaro visą &lt;html&gt; stuburą.</p>
-                    <p> &lt;head&gt; yra skirtas metaduomenims - visai nematomai puslapio informacijai;</p>
-                    <p> &lt;body&gt; yra skirtas visam matomam svetainės turiniui. </p>
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Elementas / atributas</th>
+                            <th>Ka jis dirba? :O</th>
+                            <th>Pavyzdys</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;a href=""&gt;</code></td>
+                            <td>Nuoroda į puslapį, sekciją ar svetainę.</td>
+                            <td><a href="#media">Waow (ﾉ◕ヮ◕)ﾉ</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>target="_blank"</code></td>
+                            <td>Atidaro nuorodą naujame lange/ skirtuke.</td>
+                            <td><a href="https://www.google.com" target="_blank" rel="noopener">Google (¬‿¬)</a></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;img src="" alt=""&gt;</code></td>
+                            <td>Rodo paveikslėlį.</td>
+                            <td><img src="../res/csm.gif" alt="GIF" width="80"></td>
+                        </tr>
+                        <tr>
+                            <td><code>width</code> ir <code>height</code></td>
+                            <td>Nurodo paveikslėlio dydį (čia yra juokutis kurio nesakysiu)</td>
+                            <td><img src="../res/csm.gif" alt="GIF" width="40"></td>
+                        </tr>
+                    </tbody>
+                    </table>
 
                     <div class="code-container">
 
                     <pre><code>
+                    &lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt;
 
+                    &lt;img src="../res/csm.gif" alt="Animacinis GIF" width="200"&gt;
                     </code></pre>
-
 
                     <div class="copy-container">
                     <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
                     </div>
 
                     </div>
-                    <p> Paaiškinimas </p> 
                     <br>
                     <hr>
                 </section>
 
-                <section>
-                    <p> Taip atrodo &lt;head&gt; sekcija šios svetainės HTML: </p>
-                <div class="code-container">                    
-                    
-                    <pre><code>
+                <section id="tables">
 
+                    <h2>Lentelės: &lt;table&gt;</h2>
+
+                    <p> &lt;table&gt; yra lentelė, o &lt;tr&gt; yra jos eilutė.</p>
+                    <p> &lt;th&gt; yra stulpelio antraštė, &lt;td&gt; yra paprastas langelis.</p>
+                    <p> &lt;thead&gt;, &lt;tbody&gt; ir &lt;tfoot&gt; padalina lentelę į viršų, turinį ir apačią.</p>
+                    <p> colspan ir rowspan leidžia langeliui užimti kelis stulpelius ar eilutes.</p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Elementas</th>
+                            <th>Ka jis dirba? :O</th>
+                            <th>Pavyzdys</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;caption&gt;</code></td>
+                            <td>Lentelės pavadinimas rašomas  po &lt;table&gt;.</td>
+                            <td>
+                                <table border="1" cellpadding="4" cellspacing="0">
+                                    <caption>Waow (•ᴗ•)</caption>
+                                    <tr><td>a</td><td>b</td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>colspan</code></td>
+                            <td>Langelis užima kelis stulpelius.</td>
+                            <td>
+                                <table border="1" cellpadding="4" cellspacing="0">
+                                    <tr><td colspan="2">Waow</td></tr>
+                                    <tr><td>a</td><td>b</td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;table border="1"&gt;
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;Vardas&lt;/th&gt;
+                                &lt;th&gt;Amžius&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;Ieva&lt;/td&gt;
+                                &lt;td&gt;20&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
                     </code></pre>
 
                     <div class="copy-container">
                     <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
                     </div>
 
-                </div>
-                    <p> Paaiškinimas </p>  
+                    </div>
+                    <p> Visos čia esančios lentelės kurtos taip :D </p>
                     <br>
-                    <hr>      
+                    <hr>
+                </section>
+
+                <section id="main_tag">
+
+                    <h2>&lt;main&gt;</h2>
+
+                    <p> &lt;main&gt; yra pagrindinio puslapio turinio blokas.</p>
+                    <p> Per vieną puslapį jo turi būti tik vienas, tie kurie žino apie 2 main'us, tie žino.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;main&gt;
+                        &lt;h1&gt;Pagrindinis turinys&lt;/h1&gt;
+                        &lt;p&gt;Čia tas dėl ko čia esate. Aš dėl Dėstytojos palaimos, jūs dėl šito.&lt;/p&gt;
+                    &lt;/main&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Šios svetainės puslapiuose &lt;main&gt; apgaubia visą mokomąją medžiagą, o šoninės juostos ir gifo ji neapima, nors jie irgi esminiai ypač gif. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="article_tag">
+
+                    <h2>&lt;article&gt;</h2>
+
+                    <p> &lt;article&gt; yra savarankiškas turinys, straipsnis.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;article&gt;
+                        &lt;h2&gt;Mano pirma svetainė&lt;/h2&gt;
+                        &lt;p&gt;Šiandien išmokau HTML! Noriu grįžti į vakar dieną&lt;/p&gt;
+                    &lt;/article&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Šioje svetainėje &lt;article&gt; yra kiekvieno puslapio mokymosi tekstas, kuriame sudėtos visos sekcijos. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="section_tag">
+
+                    <h2>&lt;section&gt;</h2>
+
+                    <p> &lt;section&gt; yra teminė turinio dalis, kuri dažniausiai turi savo antraštę (h2, h3...).</p>
+                    <p> Jei jam duodi id, į jį galima nukreipti nuorodą, kaip kad šoninėje nnav (href="#id").</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;section id="apie"&gt;
+                        &lt;h2&gt;Apie mane&lt;/h2&gt;
+                        &lt;p&gt;Esu pradedanti programuotoja, paleiskit mano sielą.&lt;/p&gt;
+                    &lt;/section&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Kiekviena šio puslapio tema yra atskiras &lt;section&gt;. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="aside_tag">
+
+                    <h2>&lt;aside&gt;</h2>
+
+                    <p> &lt;aside&gt; yra šalutinis turinys, susijęs su pagrindiniu, bet nebūtinas jam suprasti</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;aside&gt;
+                        &lt;p&gt;Ar matėte brachiozaurą?&lt;/p&gt;
+                        &lt;p&gt;HTML sukurtas 1991 metais.&lt;/p&gt;
+                    &lt;/aside&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip atrodo &lt;aside&gt; šios svetainės HTML: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;!-- anime girl gif bar --&gt;
+                    &lt;aside&gt;
+                        &lt;p&gt;hello&lt;/p&gt;
+                        &lt;img src="../res/csm.gif" alt="GIF"&gt;
+                    &lt;/aside&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Pas mane aside yra dešinėje pusėje ir joje gyvena gifas. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="footer_tag">
+
+                    <h2>&lt;footer&gt;</h2>
+
+                    <p> &lt;footer&gt; yra puslapio apačia. haha foot. Joje dažniausiai būna kontaktai, autorių teisės ir papildomos nuorodos.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;footer&gt;
+                        &lt;p&gt;© 2026 Vardenis Pavardenis&lt;/p&gt;
+                    &lt;/footer&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip atrodo &lt;footer&gt; šios svetainės HTML: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;footer&gt;
+                        &lt;p&gt; &lt;a href="mailto:ievajodkaite@gmail.com"&gt;Susisiek :] &lt;/a&gt; &lt;/p&gt;
+                        &lt;p&gt;© 2026 Ieva Jodkaitė&lt;/p&gt;
+                    &lt;/footer&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Čia yra nuoroda mailto:, kuri atidaro el. pašto programą, asmeniškai outlook </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="div_tag">
+
+                    <h2>&lt;div&gt;</h2>
+
+                    <p> &lt;div&gt; (division) yra bendras blokas be jokios prasmės. Nenaudokit div be reikalo</p>
+                    <p> Jei yra tinkamas semantinis elementas (header, nav, main...), naudok jį, o div palik tam, kai kito nėra.</p>
+                    <p> Blokinis elementas: visada prasideda naujoje eilutėje ir užima visą galimą plotį.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;div class="kortele"&gt;
+                        &lt;h3&gt;Pavadinimas&lt;/h3&gt;
+                        &lt;p&gt;Aprašymas&lt;/p&gt;
+                    &lt;/div&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip atrodo &lt;div&gt; šios svetainės HTML: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;div class="page-layout"&gt;
+                        &lt;nav class="side-nav"&gt;...&lt;/nav&gt;
+                        &lt;main&gt;...&lt;/main&gt;
+                        &lt;aside&gt;...&lt;/aside&gt;
+                    &lt;/div&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Čia div sugrupuoja šoninę navigaciją, turinį ir aside, kad CSS galėtų juos išdėlioti į tris stulpelius. Mygtukai su kodu irgi guli div'uose (code-container). </p>
+                    <br>
+                    <hr>
+                </section>
+
+                
+<section id="forms">
+
+                    <h2>Formos: &lt;form&gt;, &lt;input&gt; ir kiti</h2>
+
+                    <p> &lt;form&gt; yra blokas, kuriame renkama informacija iš lankytojo.</p>
+                    <p> &lt;label&gt; yra užrašas prie laukelio. Jo for atributas turi sutapti su laukelio id.</p>
+                    <p> &lt;input&gt; yra laukelis, o jo type nurodo kokio tipo (tekstas, el. paštas, slaptažodis, checkbox ir t.t.).</p>
+                    <p> &lt;button&gt; yra mygtukas, pavyzdžiui formai išsiųsti arba JavaScript funkcijai paleisti.</p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Elementas</th>
+                            <th>Ka jis dirba? :O</th>
+                            <th>Pavyzdys</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;input type="text"&gt;</code></td>
+                            <td>Vienos eilutės teksto laukelis.</td>
+                            <td><input type="text" placeholder="Waow (・ω・)"></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;input type="password"&gt;</code></td>
+                            <td>Slaptažodžio laukelis, simboliai paslepiami.</td>
+                            <td><input type="password" placeholder="Waow"></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;input type="checkbox"&gt;</code></td>
+                            <td>Varnelė, galima pažymėti kelias.</td>
+                            <td><input type="checkbox"> Waow</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;input type="radio"&gt;</code></td>
+                            <td>Apskritimas, galima pasirinkti tik vieną iš grupės (turi turėti tą patį name).</td>
+                            <td><input type="radio" name="waow"> A <input type="radio" name="waow"> B</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;textarea&gt;</code></td>
+                            <td>Didelis kelių eilučių teksto laukas.</td>
+                            <td><textarea rows="2" cols="15" placeholder="Waow"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;select&gt;</code> ir <code>&lt;option&gt;</code></td>
+                            <td>Išskleidžiamas pasirinkimų sąrašas.</td>
+                            <td><select><option>Waow</option><option>Waaaow</option></select></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;button&gt;</code></td>
+                            <td>Mygtukas.</td>
+                            <td><button type="button">Waow (ง •̀_•́)ง</button></td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;form action="" method="post"&gt;
+                        &lt;label for="vardas"&gt;Vardas:&lt;/label&gt;
+                        &lt;input type="text" id="vardas" name="vardas"&gt;
+
+                        &lt;label for="pastas"&gt;El. paštas:&lt;/label&gt;
+                        &lt;input type="email" id="pastas" name="pastas"&gt;
+
+                        &lt;button type="submit"&gt;Siųsti&lt;/button&gt;
+                    &lt;/form&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="attributes">
+
+                    <h2>Atributai</h2>
+
+                    <p> Atributai yra papildoma informacija elementui</p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Atributas</th>
+                            <th>Ka jis dirba? :O</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>id</code></td>
+                            <td>Unikalus elemento vardas, tik vienas toks per puslapį. Naudojamas nuorodoms į sekcijas (#id) ir CSS/JS.</td>
+                        </tr>
+                        <tr>
+                            <td><code>class</code></td>
+                            <td>Klasės vardas, gali kartotis daug kartų. Pagrindinis būdas stilizuoti per CSS.</td>
+                        </tr>
+                        <tr>
+                            <td><code>style</code></td>
+                            <td>CSS stilius tiesiai elemente, geriau naudoti atskirą .css failą.</td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>Patarimas, rodomas užvedus pelę.</td>
+                        </tr>
+                        <tr>
+                            <td><code>href</code> ir <code>src</code></td>
+                            <td>Kelias iki nuorodos (href) arba iki failo, kaip vaizdo ar skripto (src).</td>
+                        </tr>
+                        <tr>
+                            <td><code>alt</code></td>
+                            <td>Alternatyvus vaizdo aprašymas.</td>
+                        </tr>
+                        <tr>
+                            <td><code>lang</code></td>
+                            <td>Nurodo kalbą, pavyzdžiui lang="lt" prie &lt;html&gt;.</td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;p id="svarbus" class="raudonas" title="Waow"&gt;Tekstas&lt;/p&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="comments">
+
+                    <h2>Komentarai</h2>
+
+                    <p> Komentaras yra užrašas kodui, kurio lankytojas nemato. Jis prasideda &lt;!-- ir baigiasi --&gt;.</p>
+                    <p> Naudingas pasižymėti kas ką daro arba laikinai išjungti kodo gabalą.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;!-- tai komentaras, --&gt;
+                    &lt;p&gt;O tai matomas tekstas&lt;/p&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
                 </section>
 
             </article>
@@ -500,14 +948,13 @@
 
         <!-- anime girl gif bar -->
         <aside>
-            <p>hello</p>
             <img src="../res/csm.gif" alt="GIF">
         </aside>
 
     </div>
 
     <footer>
-        <p> <a href="mailto:ievajodkaite@gmail.com">Susisiek :] </a> </p>
+        <p> <a href="mailto:ieva.jodkaite@knf.vu.lt">Susisiek :] </a> </p>
         <p>© 2026 Ieva Jodkaitė</p>
     </footer>
 

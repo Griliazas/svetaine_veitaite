@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>veitaite</title>
+    <title>Bombinis pradžiamokslis</title>
+    <link rel="icon" type="image/x-icon" href="../res/Asa.jpg">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../scripts/button_logic.js"></script>
 </head>
 <body>
 
     <header>
-        <h2>Javascrip</h2>
+        <h2>Bombinis svetainių pradžiamokslis</h2>
 
         <!-- nav header -->
         <nav class="top-nav" aria-label="Pagrindinė navigacija">
@@ -27,77 +26,409 @@
     <div class="page-layout">
 
         <!-- nav side bar-->
-        <nav class="side-nav" aria-label="Šio puslapio skyriai">
+        <nav class="side-nav" aria-label="Skyriai">
             <h3>Šiame puslapyje</h3>
             <ul>
-                <li><a href="#intro">Įvadas</a></li>
-                <li><a href="#code-example">Kodo pavyzdys</a></li>
-                <li><a href="#extra">Papildoma informacija</a></li>
+                <li><a href="#intro">JavaScript</a></li>
+                <li><a href="#script_tag">&lt;script&gt;</a></li>
+                <li><a href="#button_html">Mygtukas ir onclick</a></li>
+                <li><a href="#full_function">Visa funkcija</a></li>
+                <li><a href="#function_basics">function, async ir await</a></li>
+                <li><a href="#dom_search">closest ir querySelector</a></li>
+                <li><a href="#clipboard">Iškarpinė</a></li>
+                <li><a href="#feedback">Mygtuko tekstas ir setTimeout</a></li>
+                <li><a href="#try_catch">try ir catch</a></li>
+                <li><a href="#demo">Išbandyk pats!</a></li>
+                <li><a href="#notes">Svarbu žinoti</a></li>
             </ul>
         </nav>
 
-                <!-- hihihihihihihihi -->
         <main>
             <article>
+
                 <section id="intro">
-                    <h1>Home</h1>
-                    <p>This is a home page.</p>
+                    <h1>JavaScript</h1>
+                    <p>Čia paaiškinsiu kaip veikia mano bombiniai JS kopijavimo mygtukai</p>
+                    <br>
+                    <hr>
                 </section>
 
-                                <section id="code-example">
-                    <h2>Kodo pavyzdys 1</h2>
+                <section id="script_tag">
+
+                    <h2>&lt;script&gt;</h2>
+
+                    <p> &lt;script&gt; yra elementas, kuriuo JavaScript kodas prijungiamas prie HTML puslapio.</p>
+                    <p> Kodą galima rašyti tiesiai tarp &lt;script&gt;, bet geriau jį laikyti kitame .js faile ir prijungti per src atributą (kaip ir CSS).</p>
+                    <p> Prašau įpraskite nerašyt inline CSS ir JS !!</p>
+                    <p> Šitame site JS script yra <code>scripts/button_logic.js</code>.</p>
 
                     <div class="code-container">
 
-                        <pre><code>// Pirmas kodas
-                public void hello() {
-                    System.out.println("Hello!");
-                }</code></pre>
+                    <pre><code>
+                    &lt;script src="../scripts/button_logic.js"&gt;&lt;/script&gt;
+                    </code></pre>
 
-                        <div class="copy-container">
-                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                        </div>
-
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
                     </div>
 
-                    <h2>Kodo pavyzdys 2</h2>
+                    </div>
+                    <p> Rašoma &lt;head&gt; viduje. Dėl to copyCode pasiekiama puslapyje. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="button_html">
+
+                    <h2>Mygtukas ir onclick</h2>
+
+                    <p> Copy mygtukas yra paprastas &lt;button&gt; elementas su klase copy-btn!</p>
+                    <p> Atributas onclick  nurodo, kokį JS metoda naudot, kai mygtukas paspaudžiamas.</p>
+                    <p> this rodo patį paspaustą mygtuką. this matėme ir su java. Tai yra kontekstas, funckija žino kuris mygtukas iškvietė. Kažkas tokio.</p>
 
                     <div class="code-container">
 
-                        <pre><code>// Antras kodas
-                public int suma(int a, int b) {
-                    return a + b;
-                }</code></pre>
+                    <pre><code>
+&lt;div class="code-container"&gt;
 
-                        <div class="copy-container">
-                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                        </div>
+    &lt;pre&gt;&lt;code&gt;
+    &amp;lt;h1&amp;gt;Sveikas&amp;lt;/h1&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+
+    &lt;div class="copy-container"&gt;
+        &lt;button class="copy-btn" onclick="copyCode(this)"&gt;Kopijuok!&lt;/button&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
 
                     </div>
 
-                </section>
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Dalis</th>
+                            <th>Ka ji dirba? :O</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>class="code-container"</code></td>
+                            <td>Div (prašau nebauskit už div), turi ir kodą, ir mygtuką. Pagal jį funkcija randa, kurį kodą kopijuoti. Šį karta div labai labai labai svarbus buvo.</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;pre&gt;&lt;code&gt;</code></td>
+                            <td>Pats kodas, kuris bus nukopijuotas.</td>
+                        </tr>
+                        <tr>
+                            <td><code>class="copy-btn"</code></td>
+                            <td>Klasė mygtuko stiliui! Dėl jos jis labai labai gražus.</td>
+                        </tr>
+                        <tr>
+                            <td><code>onclick="copyCode(this)"</code></td>
+                            <td>Paspaudus iškviečia funkciją su kontekstu . Krc jo.</td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <p> Svarbu, kad mygtukas ir kodas abu turi būti viename code-container, kitaip funkcija būtų durna ir dėl to buvo labai daug problemų prašau nedaryti mano klaidų... </p>
+                    <br>
+                    <hr>
                 </section>
 
-                <section id="extra">
-                    <h2>Papildoma informacija</h2>
-                    <p>Čia gali pateikti papildomą informaciją.</p>
+                <section id="full_function">
+
+                    <h2>Visa funkcija</h2>
+
+                    <p> Čia yra visa funkcija iš button_logic.js. Išnagrinėsime frame by frame >:]</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+async function copyCode(button) {
+    const container = button.closest(".code-container");
+    const code = container.querySelector("code").innerText;
+
+    try {
+        await navigator.clipboard.writeText(code);
+
+        const originalText = button.innerText;
+        button.innerText = "Nukopijuotas!";
+
+        setTimeout(() =&gt; {
+            button.innerText = originalText;
+        }, 1500);
+
+    } catch (err) {
+        console.error("Nepavyko nukopijuoti:", err);
+        alert("Nepavyko nukopijuoti kodo :(( ");
+    }
+}
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> TLDR; funkcija suranda kodą div, nukopijuoja jį į clipboard, trumpam pakeičia mygtuko tekstą į „Nukopijuotas!“. </p>
+                    <br>
+                    <hr>
                 </section>
+
+                <section id="function_basics">
+
+                    <h2>function, async ir await</h2>
+
+                    <p> Skliaustuose esantis <code>button</code> yra parametras :] Čia tai paspaustas mygtukas (kurį perdavėme per <code>this</code>) ir vėl kontekstas gal per daug kartoju save.</p>
+                    <p> <code>async</code> reiškia, kad funkcija gali laukt lėtos durnos iškarpinės, nesustabdydama viso puslapio.</p>
+                    <p> <code>await</code> Laukia. The one who waits. Jį galima naudoti tik viduje <code>async</code> funkcijos.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+async function sveikinti(vardas) {
+    await kazkasLetas();
+    console.log("Labas, pasauli, mano vardas " + vardas);
+}
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Async reiks <code>navigator.clipboard.writeText</code> negrąžina rezultato iškart, o pažada, kad kada nors baigs darbą. Panašiai kaip aš pažadu grąžint pinigus Benediktui, kažkada bus. <code>await</code> palaukia to pažado. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="dom_search">
+
+                    <h2>closest ir querySelector</h2>
+
+                    <p> JavaScript gali matyt HTML elementus ir jų ieškoti. Nepasislėpsite nuo šios negražios kalbos.</p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Kodas</th>
+                            <th>Ka jis dirba? :O</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>button.closest(".code-container")</code></td>
+                            <td>Pradeda nuo mygtuko ir eina per parent elementus, kol randa <code>code-container</code>.</td>
+                        </tr>
+                        <tr>
+                            <td><code>container.querySelector("code")</code></td>
+                            <td>Eina per container vidų ir randa  &lt;code&gt; elementą.</td>
+                        </tr>
+                        <tr>
+                            <td><code>.innerText</code></td>
+                            <td>Elemento matomas tekstas be durnų HTML žymių. Tie kas žino.</td>
+                        </tr>
+                        <tr>
+                            <td><code>const</code></td>
+                            <td>Sukuria kintamąjį, nu visose kalbose const yra aš jum rato neišradinėsiu.</td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+const container = button.closest(".code-container");
+const code = container.querySelector("code").innerText;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Dėl šio būdo vienas funkcijos kodas veikia su visais mygtukais puslapy ir kituose kur yra script link.</p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="clipboard">
+
+                    <h2>Iškarpinė</h2>
+
+                    <p> Visi žinom kas tas clipboard. Pasirinkau daryti mygtuką nors ir galit laisvai select'int tekstą nes žinau kad žmonės tinginiai arba kartais nesugeba naudot CTRL+C.</p>
+                    <p> <code>navigator.clipboard.writeText(tekstas)</code> įrašo tekstą į clipboard...</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+await navigator.clipboard.writeText(code);
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Naršyklės leidžia tai daryti tik kai saugu tai nebijokit nesuvarysiu kompiuterio.</p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="feedback">
+
+                    <h2>Mygtuko tekstas ir setTimeout</h2>
+
+                    <p> Jei tingit patikrint padariau kad mygtukas parodyt7 kai veikia. Tuo pačiu metu kažkas smegenyse veikia ir geriau jaučias kai mygtukai duoda grįžtamąjį ryšį.</p>
+                    <p> Pirmiausia išsisaugome pradinį tekstą kintamajame, kad vėliau galėtume jį grąžinti.</p>
+                    <p> <code>setTimeout(funkcija, milisekundės)</code> paleidžia funkciją po nurodyto laiko :]/p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+const originalText = button.innerText;
+button.innerText = "Nukopijuotas!";
+
+setTimeout(() =&gt; {
+    button.innerText = originalText;
+}, 1500);
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> <code>() =&gt; { ... }</code> yra rodyklinė funkcija arba trumpesnis būdas parašyti funkciją be vardo.</p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="try_catch">
+
+                    <h2>try ir catch</h2>
+
+                    <p> Kartais kodas gali nepavykti (pvz. naršyklė neleido kopijuoti) :[</p>
+                    <p> <code>try</code> bloke bandome atlikti darbą. Jei įvyksta klaida, kodas peršoka į <code>catch</code> bloką, o klaida patenka į <code>err</code>.</p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Kodas</th>
+                            <th>Ka jis dirba? :O</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>console.error(...)</code></td>
+                            <td>Parašo klaidą F12, skirta programuotojui.</td>
+                        </tr>
+                        <tr>
+                            <td><code>alert(...)</code></td>
+                            <td>Iššoka langas su žinute, skirta lankytojui.</td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+try {
+    await navigator.clipboard.writeText(code);
+} catch (err) {
+    console.error("Nepavyko nukopijuoti:", err);
+    alert("Nepavyko nukopijuoti kodo :(( ");
+}
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="demo">
+
+                    <h2>Įklijuok</h2>
+
+                    <p> Kitur šito nedariau, nes tingiu, turit notepad.</p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+console.log("Waow (≧◡≦)");
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+
+                    <textarea rows="3" cols="40" placeholder="Įklijuok čia (・ω・)"></textarea>
+
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="notes">
+
+                    <h2>Svarbu žinoti</h2>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Problema</th>
+                            <th>Skill issue / sprendimas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mygtukas nieko nedaro</td>
+                            <td>Patikrink, ar &lt;head&gt; yra teisingas &lt;script src&gt; kelias, ir ar konsolėje (F12) nėra raudonų klaidų.</td>
+                        </tr>
+                        <tr>
+                            <td>Klaida „Cannot read properties of null“</td>
+                            <td>Mygtukas nėra viduje <code>code-container</code> arba šalia nėra &lt;code&gt; elemento.</td>
+                        </tr>
+                        <tr>
+                            <td>Iššoka alert „Nepavyko nukopijuoti“</td>
+                            <td>Naršyklė neleido pasiekti iškarpinės. Atidaryk svetainę per https arba localhost.</td>
+                        </tr>
+                        <tr>
+                            <td>Nukopijuotas kodas turi per daug tarpų pradžioje</td>
+                            <td>&lt;pre&gt; išsaugo visus tarpus</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    <p> Dabar jau gali pridėti „Kopijuok!“ mygtuką prie bet kurio savo kodo bloko :D bet kiekviena karta kai jį pridedat pagal mano svetainę tikiuosi mandarino už vieną puslapį </p>
+                    <br>
+                    <hr>
+                </section>
+
             </article>
         </main>
 
         <!-- anime girl gif bar -->
         <aside>
-            <p>hello</p>
-            <img src="../res/csm.gif" alt="Nezuko GIF">
+
+            <img src="../res/asa.gif" alt="GIF">
         </aside>
 
     </div>
 
     <footer>
-        <p> <a href="mailto:ievajodkaite@gmail.com">Susisiek :] </a> </p>
+        <p> <a href="mailto:ieva.jodkaite@knf.vu.lt">Susisiek :] </a> </p>
         <p>© 2026 Ieva Jodkaitė</p>
     </footer>
-
 
 </body>
 </html>

@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>veitaite</title>
+    <title>Bombinis pradžiamokslis</title>
+    <link rel="icon" type="image/x-icon" href="../res/Asa.jpg">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../scripts/button_logic.js"></script>
 </head>
 <body>
 
     <header>
-        <h2>Title</h2>
+        <h2>Bombinis svetainių pradžiamokslis</h2>
 
         <!-- nav header -->
         <nav class="top-nav" aria-label="Pagrindinė navigacija">
@@ -27,74 +26,936 @@
     <div class="page-layout">
 
         <!-- nav side bar-->
-        <nav class="side-nav" aria-label="Šio puslapio skyriai">
+        <nav class="side-nav" aria-label="Skyriai">
             <h3>Šiame puslapyje</h3>
             <ul>
-                <li><a href="#intro">Įvadas</a></li>
-                <li><a href="#code-example">Kodo pavyzdys</a></li>
-                <li><a href="#extra">Papildoma informacija</a></li>
+                <li><a href="#intro">CSS</a></li>
+                <li><a href="#linking">Kaip prijungti CSS</a></li>
+                <li><a href="#syntax">Sintaksė</a></li>
+                <li><a href="#cascade">Kaskada</a></li>
+                <li><a href="#selectors">Selektoriai</a></li>
+                <li><a href="#colors">Spalvos</a></li>
+                <li><a href="#text">Tekstas ir šriftai</a></li>
+                <li><a href="#box">Dėžutės modelis</a></li>
+                <li><a href="#units">Vienetai</a></li>
+                <li><a href="#display">display</a></li>
+                <li><a href="#flex">Flexbox</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#position">position</a></li>
+                <li><a href="#overflow">overflow</a></li>
+                <li><a href="#hover">Hover ir transition</a></li>
+                <li><a href="#media">Media query</a></li>
+                <li><a href="#scrollbar">Slinkties juosta</a></li>
+                <li><a href="#comments">Komentarai</a></li>
             </ul>
         </nav>
 
-         <!-- hihihihihihihihi -->
         <main>
             <article>
+
                 <section id="intro">
-                    <h1>Home</h1>
-                    <p>This is a home page.</p>
+                    <h1>CSS</h1>
+                    <p>Šiame puslapyje išmoksite CSS.</p>
+                    <p>HTML sukuria puslapio griaučius, o CSS juos nudažo ir kartais padaro gražesnius. Visi pavyzdžiai čia paimti iš tikro šios svetainės styles.css failo :]</p>
+                    <br>
+                    <hr>
                 </section>
 
-                                <section id="code-example">
-                    <h2>Kodo pavyzdys 1</h2>
+                <section id="linking">
+
+                    <h2>Kaip prijungti CSS</h2>
+
+                    <p> CSS (Cascading Style Sheets) yra stiliaus kalba. Ją prie HTML galima prijungti trimis būdais. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Būdas</th><th>Kur rašoma?</th><th>Kada naudoti?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Išorinis failas</td><td><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code> viduje &lt;head&gt;</td><td>Beveik visada! Vienas failas stilizuoja visus puslapius.</td></tr>
+                        <tr><td>Vidinis</td><td><code>&lt;style&gt;...&lt;/style&gt;</code> viduje &lt;head&gt;</td><td>Kai stilių reikia tik vienam puslapiui.</td></tr>
+                        <tr><td>Eilutinis (inline)</td><td><code>style="..."</code> atributas elemente</td><td>Greitam vienkartiniam pakeitimui, nedaryk to durniau.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Šioje svetainėje naudojamas išorinis failas, jis prijungtas kiekvieno puslapio &lt;head&gt; dalyje: </p>
 
                     <div class="code-container">
 
-                        <pre><code>// Pirmas kodas
-                public void hello() {
-                    System.out.println("Hello!");
-                }</code></pre>
+                    <pre><code>
+                    &lt;link rel="stylesheet" href="../css/styles.css"&gt;
+                    </code></pre>
 
-                        <div class="copy-container">
-                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                        </div>
-
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
                     </div>
 
-                    <h2>Kodo pavyzdys 2</h2>
+                    </div>
+                    <p> Vidinio ir eilutinio pavyzdžiai: </p>
 
                     <div class="code-container">
 
-                        <pre><code>// Antras kodas
-                public int suma(int a, int b) {
-                    return a + b;
-                }</code></pre>
+                    <pre><code>
+                    &lt;style&gt;
+                        p {
+                            color: hotpink;
+                        }
+                    &lt;/style&gt;
 
-                        <div class="copy-container">
-                        <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
-                        </div>
+                    &lt;p style="color: hotpink;"&gt;Ružavas... mmmmm... &lt;/p&gt;
+                    </code></pre>
 
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
                     </div>
 
-                </section>
+                    </div>
+                    <br>
+                    <hr>
                 </section>
 
-                <section id="extra">
-                    <h2>Papildoma informacija</h2>
-                    <p>Čia gali pateikti papildomą informaciją.</p>
+                <section id="syntax">
+
+                    <h2>CSS sintaksė</h2>
+
+                    <p> CSS taisyklė susideda iš selektoriaus ir deklaracijų bloko. </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    selektorius {
+                        savybė: reikšmė;
+                        kita-savybė: kita reikšmė;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip atrodo pati paprasčiausia taisyklė šios svetainės CSS nes aš labai kieta ir per daug prirašiau kitur prašau padėkit: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    p {
+                        font-size: 20px;
+                    }
+
+                    h1 {
+                        color: #ecbdff;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Čia visų &lt;p&gt; elementų šriftas bus 20 pikselių, o visų &lt;h1&gt; antraščių spalva bus ružava. </p>
+                    <br>
+                    <hr>
                 </section>
+
+                <section id="cascade">
+
+                    <h2>Kaskada</h2>
+
+                    <p> Kas nutinka, jei dvi taisyklės stilizuoja tą patį elementą? </p>
+                    <p> 1. Konkretesnis selektorius laimi: id (#) stipresnis už klasę (.), o klasė stipresnė už elementą. </p>
+                    <p> 2. Jei specifiškumas vienodas, laimi taisyklė, parašyta vėliau faile. Įdomiai veikia ane. </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    /* viena iš svetainės taisyklių visoms nuorodoms */
+                    a {
+                        color: #151b2e;
+                    }
+
+                    /* konkretesnė taisyklė viršuje esančioms nuorodoms */
+                    .top-nav a {
+                        color: #cdbdff;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Nors a taisyklė nurodo tamsią spalvą, nuorodos viršutinėje navigacijoje yra šviesios, nes .top-nav a yra konkretesnis selektorius :O </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="selectors">
+
+                    <h2>Selektoriai</h2>
+
+                    <p> Selektorius sako naršyklei, kuriuos elementus stilizuoti. Žemiau yra visi, kuriuos naudoju šioje svetainėje. </p>
+
+                    <p> Gera taisykle rašyti kiek įmanoma bendresnius stilius, labai vargau keičiant spalvas. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Selektorius</th><th>Ką renkas valentinui?</th><th>Pavyzdys</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>p</code></td><td>Visus tokio tipo elementus (elemento selektorius).</td><td><code>p { font-size: 20px; }</code></td></tr>
+                        <tr><td><code>.klasė</code></td><td>Visus elementus su tokia class="klasė".</td><td><code>.copy-btn { cursor: pointer; }</code></td></tr>
+                        <tr><td><code>#id</code></td><td>Vieną elementą su tokiu id (naudoju retai, nes jie unikalūs).</td><td><code>#intro { ... }</code></td></tr>
+                        <tr><td><code>*</code></td><td>Absoliučiai visus elementus.</td><td><code>* { box-sizing: border-box; }</code></td></tr>
+                        <tr><td><code>a, b</code></td><td>Grupavimas: abu selektoriai gauna tą patį stilių.</td><td><code>html, body { margin: 0; }</code></td></tr>
+                        <tr><td><code>a b</code></td><td>Palikuonis: b viduje a (bet kokiame gylyje).</td><td><code>article section h2 { ... }</code></td></tr>
+                        <tr><td><code>a.klasė</code></td><td>Elementą a, kuris turi ir tą klasę (be tarpo!).</td><td><code>.top-nav a.active { ... }</code></td></tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;!-- HTML --&gt;
+                    &lt;button class="copy-btn"&gt;Kopijuok!&lt;/button&gt;
+
+                    /* CSS */
+                    .copy-btn {
+                        padding: 8px 16px;
+                        background-color: #151b2e;
+                        color: #d9ccff;
+                        font-weight: bold;
+                        border: 2px #9d8ce0 solid;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 14px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip atrodo grupavimas ir palikuonio selektoriai iš šios svetainės: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    html, body {
+                        margin: 0;
+                        padding: 0;
+                        height: 100vh;
+                        overflow: hidden;
+                        background-color: #0a0c14;
+                    }
+
+                    article section h2 {
+                        color: #ecbdff;
+                    }
+
+                    .side-nav a:hover,
+                    .side-nav a.active {
+                        background-color: #cdbdff;
+                        color: #151b2e;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="colors">
+
+                    <h2>Spalvos</h2>
+
+                    <p> Spalvas CSS galima rašyti keliais būdais: pavadinimu (red, hotpink), hex kodu (#ecbdff) arba rgb (rgb(236, 189, 255)). </p>
+                    <p> Hex kodai net nelyginamai geriausias pasirinkimas net ne=inau ką darot be jų.</p>
+                    <p> color keičia teksto spalvą, o background-color keičia fono spalvą. Šios svetainės paletė: </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Spalva</th><th>Kodas</th><th>Kur ikišau?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span style="background-color:#0a0c14; color:#ecbdff; padding:4px 10px;">Waow</span></td><td><code>#0a0c14</code></td><td>Viso puslapio fonas (body).</td></tr>
+                        <tr><td><span style="background-color:#151b2e; color:#ecbdff; padding:4px 10px;">Waow</span></td><td><code>#151b2e</code></td><td>Header fonas, mygtukai.</td></tr>
+                        <tr><td><span style="background-color:#1a2036; color:#ecbdff; padding:4px 10px;">Waow</span></td><td><code>#1a2036</code></td><td>Pagrindinis turinys (article).</td></tr>
+                        <tr><td><span style="background-color:#262e4a; color:#ecbdff; padding:4px 10px;">Waow</span></td><td><code>#262e4a</code></td><td>Šoninė navigacija ir aside.</td></tr>
+                        <tr><td><span style="background-color:#9d8ce0; color:#151b2e; padding:4px 10px;">Waow</span></td><td><code>#9d8ce0</code></td><td>Footer, rėmeliai.</td></tr>
+                        <tr><td><span style="background-color:#cdbdff; color:#151b2e; padding:4px 10px;">Waow</span></td><td><code>#cdbdff</code></td><td>Nuorodos, hover fonas.</td></tr>
+                        <tr><td><span style="background-color:#ecbdff; color:#151b2e; padding:4px 10px;">Waow</span></td><td><code>#ecbdff</code></td><td>Antraštės ir kodas.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Pavyzdys iš CSS: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    header {
+                        background-color: #151b2e;
+                        color: #cdbdff;
+                    }
+
+                    header h2 {
+                        color: #ecbdff;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Patarimas: naudok online color pallete generators (・ω・) </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="text">
+
+                    <h2>Tekstas ir šriftai</h2>
+
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Savybė</th><th>Ką dirba?</th><th>Pavyzdys</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>font-family</code></td><td>Šrifto šeima. Šioje svetainėje visur math.</td><td><code>font-family: math;</code></td></tr>
+                        <tr><td><code>font-size</code></td><td>Teksto dydis.</td><td><code>font-size: 20px;</code></td></tr>
+                        <tr><td><code>font-weight</code></td><td>Teksto storis (normal, bold).</td><td><code>font-weight: bold;</code></td></tr>
+                        <tr><td><code>color</code></td><td>Teksto spalva.</td><td><code>color: #ecbdff;</code></td></tr>
+                        <tr><td><code>text-align</code></td><td>Teksto lygiavimas (left, center, right).</td><td><code>text-align: center;</code></td></tr>
+                        <tr><td><code>text-decoration</code></td><td>Pabraukimas. none panaikina nuorodų pabraukimą.</td><td><code>text-decoration: none;</code></td></tr>
+                    </tbody>
+                    </table>
+                    <p> Taip aprašytos viršutinės navigacijos nuorodos: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .top-nav a {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        color: #cdbdff;
+                        text-decoration: none;
+                        font-weight: bold;
+                        border-radius: 10px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip visai svetainei nustatytas šriftas: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    * {
+                        box-sizing: border-box;
+                        font-family: math;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="box">
+
+                    <h2>Dėžutės modelis (box model)</h2>
+
+                    <p> Kiekvienas HTML elementas CSS akimis yra dėžutė. Ji turi keturis sluoksnius iš vidaus į išorę: </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Sluoksnis</th><th>Ką daro?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>content</td><td>Pats turinys (tekstas, vaizdas).</td></tr>
+                        <tr><td><code>padding</code></td><td>Tuščia vieta viduje, tarp turinio ir rėmelio.</td></tr>
+                        <tr><td><code>border</code></td><td>Rėmelis aplink padding.</td></tr>
+                        <tr><td><code>margin</code></td><td>Tuščia vieta išorėj.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Pavyzdys!!! (ružavas rėmelis, padding viduje ir margin išorėje): </p>
+                    <div style="border: 2px solid #9d8ce0; padding: 20px; margin: 20px; background-color:#262e4a; color:#ecbdff;">Waow (๑˃ᴗ˂)ﻭ</div>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;div style="border: 2px solid #9d8ce0; padding: 20px; margin: 20px;"&gt;
+                        Waow
+                    &lt;/div&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Savybes galima rašyti ir trumpiau, pavyzdžiui padding: 10px 20px; reiškia 10px viršuje ir apačioje, 20px kairėje ir dešinėje. </p>
+                    <p> Dar vienas svarbus dalykas yra border-radius, kuris suapvalina kampus, ir box-sizing: border-box, dėl kurio width apima padding ir border, tad elementai nebeišlenda iš savo rėmų. Todėl jį duodu visiems elementams: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    * {
+                        box-sizing: border-box;
+                    }
+
+                    pre code {
+                        background-color: #0d1020;
+                        border: 2px solid #9d8ce0;
+                        padding: 13px;
+                        border-radius: 2px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="units">
+
+                    <h2>Matavimo vienetai</h2>
+
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Vienetas</th><th>Ką daro pituhas?</th><th>Pavyzdys iš šios svetainės</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>px</code></td><td>Pikseliai, fiksuotas dydis.</td><td><code>font-size: 20px;</code></td></tr>
+                        <tr><td><code>%</code></td><td>Procentai nuo tėvinio elemento dydžio.</td><td><code>width: 100%;</code></td></tr>
+                        <tr><td><code>vh</code></td><td>Viewport height: 1vh yra 1% ekrano aukščio.</td><td><code>height: 100vh;</code></td></tr>
+                        <tr><td><code>fr</code></td><td>Grid vienetas: dalis laisvos vietos.</td><td><code>minmax(0, 1fr)</code></td></tr>
+                        <tr><td><code>calc()</code></td><td>Leidžia skaičiuoti, net maišyti vienetus.</td><td><code>calc(100vh - 160px)</code></td></tr>
+                    </tbody>
+                    </table>
+                    <p> Dabartinė šio puslapio aukščio formulė, kuri leidžia pagrindiniam turiniui užimti visą ekraną, išskyrus fiksuotą header ir footer: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .page-layout {
+                        height: calc(100vh - 160px); /* ekrano aukštis minus viršaus ir apačios plotai */
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="display">
+
+                    <h2>display</h2>
+
+                    <p> display nusako, kaip elementas elgiasi puslapyje. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Reikšmė</th><th>Ką daro?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>block</code></td><td>Prasideda naujoje eilutėje, užima visą plotį (div, p, h1).</td></tr>
+                        <tr><td><code>inline</code></td><td>Telpa eilutėje, neturi plotio ir aukščio (span, a).</td></tr>
+                        <tr><td><code>inline-block</code></td><td>Telpa eilutėje, bet leidžia nustatyti padding, width ir height.</td></tr>
+                        <tr><td><code>flex</code></td><td>Vaikus išrikiuoja eilute ar stulpeliu (flexbox).</td></tr>
+                        <tr><td><code>grid</code></td><td>Vaikus išdėlioja į lentelę, kurią pats suprojektuoji (grid).</td></tr>
+                        <tr><td><code>none</code></td><td>Visiškai paslepia elementą.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Pavyzdys: viršutinės navigacijos nuorodos pagal nutylėjimą yra inline, todėl joms duotas inline-block, kad veiktų padding: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .top-nav a {
+                        display: inline-block;
+                        padding: 10px 20px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="flex">
+
+                    <h2>Flexbox</h2>
+
+                    <p> display: flex; paverčia elementą flex konteineriu. Jo vaikai išsirikiuoja į eilutę (arba stulpelį) ir juos lengva centruoti ar paskirstyti. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Savybė</th><th>Ką daro?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>flex-direction</code></td><td>Kryptis: row (eilutė, nutylėjimas) arba column (stulpelis).</td></tr>
+                        <tr><td><code>justify-content</code></td><td>Išdėsto vaikus pagrindine ašimi: center, space-evenly, flex-end...</td></tr>
+                        <tr><td><code>align-items</code></td><td>Išdėsto vaikus skersine ašimi: center, flex-start...</td></tr>
+                        <tr><td><code>flex-wrap</code></td><td>Leidžia vaikams persikelti į kitą eilutę, kai neužtenka vietos.</td></tr>
+                        <tr><td><code>gap</code></td><td>Tarpas tarp vaikų.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Taip aprašyta viršutinė navigacija: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .top-nav {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 13px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Čia nuorodos sustatytos į eilutę, centre, su 13 pikselių tarpais, o ant siauro ekrano persikelia į kitą eilutę. Footer naudoja tą patį triuką: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    footer {
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+
+                    .copy-container {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> space-evenly vienodai išdėsto vaikus visame plote, o flex-end prispaudžia mygtuką "Kopijuok!" prie dešiniojo krašto. </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="grid">
+
+                    <h2>Grid</h2>
+
+                    <p> display: grid; dalija elementą į stulpelius ir eilutes. Tinka visam puslapio išdėstymui, o flexbox daugiau tinka vienai eilutei ar stulpeliui. </p>
+                    <p> grid-template-columns nurodo stulpelių plotį, o gap tarpą tarp jų. Dar svarbi funkcija minmax(min, max), kuri nurodo, kad stulpelis negali būti siauresnis už min ir platesnis už max. </p>
+                    <p> minmax(0, 1fr) Be jo plati kodo eilutė galėtų išstumti visą stulpelį ir sugadinti puslapį. </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .page-layout {
+                        display: grid;
+                        grid-template-columns: 210px minmax(0, 1fr) 210px;
+                        gap: 13px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Čia šoninė navigacija yra 210px, aside yra 210px, o turinys užpildo visą tarpą. Siaurinant ekraną grid keičiamas media query taisyklėmis (apie jas toliau): </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    @media (max-width: 900px) {
+                        .page-layout {
+                            grid-template-columns: 180px minmax(0, 1fr);
+                        }
+
+                        aside {
+                            grid-column: 2;
+                        }
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="position">
+
+                    <h2>position</h2>
+
+                    <p> position nusako, kaip elementas yra išdėstomas puslapyje. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Reikšmė</th><th>Ką daro?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>static</code></td><td>Elementas yra įprastoje vietoje.</td></tr>
+                        <tr><td><code>relative</code></td><td>Elementą galima pastumti nuo jo įprastos vietos (top, left...).</td></tr>
+                        <tr><td><code>absolute</code></td><td>Elementas pozicionuojamas pagal artimiausią pozicionuotą tėvą.</td></tr>
+                        <tr><td><code>fixed</code></td><td>Elementas prikabintas prie ekrano ir nejuda slenkant.</td></tr>
+                        <tr><td><code>sticky</code></td><td>Slenka kartu su puslapiu, kol pasiekia nurodytą vietą, tada prilimpa.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Šios svetainės header ir footer yra fixed: jie visada matomi viršuje ir apačioje. top, left ir bottom nurodo atstumą nuo ekrano krašto, o z-index užtikrina, kad jie būtų virš viso kito turinio. </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    header {
+                        width: 100%;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        z-index: 1000;
+                    }
+
+                    footer {
+                        width: 100%;
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1000;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Fixed elementai nebeužima vietos puslapyje, todėl body gavo padding-top ir padding-bottom, kad turinys nepasislėptų po jais: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    body {
+                        padding-top: 100px;
+                        padding-bottom: 40px;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="overflow">
+
+                    <h2>overflow ir slinkimas</h2>
+
+                    <p> overflow nurodo, ką daryti, kai turinys netelpa į dėžutę. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Reikšmė</th><th>Ką daro?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>visible</code></td><td>Nutylėjimas, turinys išlenda už dėžutės ribų.</td></tr>
+                        <tr><td><code>hidden</code></td><td>Nepatelpantis turinys paslepiamas.</td></tr>
+                        <tr><td><code>auto</code></td><td>Slinkties juosta atsiranda tik jei jos reikia.</td></tr>
+                        <tr><td><code>scroll</code></td><td>Slinkties juosta rodoma visada.</td></tr>
+                    </tbody>
+                    </table>
+                    <p> Šioje svetainėje visas puslapis užrakintas (overflow: hidden), o slenka tik pagrindinis turinys. Labai stengiaus VU bibliotekoj </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    html, body {
+                        height: 100vh;
+                        overflow: hidden;
+                    }
+
+                    main {
+                        height: 100%;
+                        overflow-y: auto;
+                    }
+
+                    .side-nav {
+                        height: 100%;
+                        overflow-y: auto;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> overflow-y valdo tik vertikalų slinkimą, o overflow-x horizontalų. Šitaip aprašyti kodo blokai, kad ilgos eilutės slinktų į šoną ir neišlįstų iš dėžutės: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    pre {
+                        max-width: 100%;
+                        overflow-x: auto;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> O šita eilutė padaro, kad paspaudus nuorodą į sekciją puslapis nušoka gražiai: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    html {
+                        scroll-behavior: smooth;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="hover">
+
+                    <h2>Hover ir animacijos (transition)</h2>
+
+                    <p> Pseudo-klasė :hover suveikia, kai užvedi pelę ant elemento. Pridedama prie selektoriaus per dvitaškį, ir tada galima pakeisti elemento išvaizdą. </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .top-nav a {
+                        background-color: transparent;
+                        color: #cdbdff;
+                        transition: background-color 0.2s, color 0.2s;
+                    }
+
+                    .top-nav a:hover {
+                        background-color: #cdbdff;
+                        color: #1a2036;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Pabandyk užvesti pelę ant bet kurios viršuje esančios nuorodos ar mygtuko "Kopijuok!". Kitos naudingos pseudo-klasės yra :active, :focus, ir :first-child. Kopijavimo mygtukui hover aprašytas taip: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    .copy-btn:hover {
+                        background-color: #0d1020;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="media">
+
+                    <h2>Media query (responsive dizainas)</h2>
+
+                    <p> @media taisyklės leidžia pritaikyti puslapį skirtingiems ekranams: kompiuteriui, planšetei ar telefonui. Viduje esantis CSS veikia tik jei sąlyga tenkinama. </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    /* planšetė */
+                    @media (max-width: 900px) {
+                        .page-layout {
+                            grid-template-columns: 180px minmax(0, 1fr);
+                        }
+
+                        aside {
+                            grid-column: 2;
+                        }
+                    }
+
+                    /* telefonas */
+                    @media (max-width: 600px) {
+                        .page-layout {
+                            grid-template-columns: minmax(0, 1fr);
+                            gap: 16px;
+                        }
+
+                        header h2 {
+                            font-size: 24px;
+                        }
+
+                        .top-nav a {
+                            padding: 8px 12px;
+                        }
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Čia PC yra trys stulpeliai, planšetėje du, o telefone vienas. Kad tai veiktų, HTML &lt;head&gt; turi būti ši eilutė: </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Pabandyk keisti naršyklės lango dydį ir pamatysi, kaip ši svetainė prisitaiko :D </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="scrollbar">
+
+                    <h2>Slinkties juostos stilius</h2>
+
+                    <p> Scrollbar taip pat galima nudažyti, naudojant pseudo-elementus ::-webkit-scrollbar. Jie veikia Chrome, Edge ir Safari naršyklėse. </p>
+
+                    <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr><th>Pseudo-elementas</th><th>Ką stilizuoja?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>::-webkit-scrollbar</code></td><td>Visą juostą (pavyzdžiui jos plotį).</td></tr>
+                        <tr><td><code>::-webkit-scrollbar-track</code></td><td>Takelį, kuriuo juda slankiklis.</td></tr>
+                        <tr><td><code>::-webkit-scrollbar-thumb</code></td><td>Patį slankiklį.</td></tr>
+                    </tbody>
+                    </table>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    ::-webkit-scrollbar {
+                        width: 10px;
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        background: #151b2e;
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                        background: #9d8ce0;
+                    }
+
+                    ::-webkit-scrollbar-thumb:hover {
+                        background: #cdbdff;
+                    }
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Taip atsirado violetinė slinkties juosta dešinėje :] </p>
+                    <br>
+                    <hr>
+                </section>
+
+                <section id="comments">
+
+                    <h2>Komentarai</h2>
+
+                    <p> CSS komentaras rašomas tarp /* ir */. Žinot jau kas tie komentarai </p>
+
+                    <div class="code-container">
+
+                    <pre><code>
+                    /* tai komentaras */
+                    p {
+                        font-size: 20px; /* komentaras gali būti ir eilutės gale */
+                    }
+
+                    /* h1 {
+                        color: red;
+                    } */
+                    </code></pre>
+
+                    <div class="copy-container">
+                    <button class="copy-btn" onclick="copyCode(this)">Kopijuok!</button>
+                    </div>
+
+                    </div>
+                    <p> Atkreipk dėmesį, kad HTML komentarai atrodo kitaip (&lt;!-- --&gt;) ir CSS faile jų rašyti negalima! Buvo gal kartas man :[ </p>
+                    <br>
+                    <hr>
+                </section>
+
             </article>
         </main>
 
         <!-- anime girl gif bar -->
         <aside>
-            <p>hello</p>
-            <img src="../res/chica.gif" alt="Nezuko GIF">
+            <img src="../res/jump.gif" alt="GIF">
         </aside>
 
     </div>
-
+    
     <footer>
-        <p> <a href="mailto:ievajodkaite@gmail.com">Susisiek :] </a> </p>
+        <p> <a href="mailto:ieva.jodkaite@knf.vu.lt">Susisiek :] </a> </p>
         <p>© 2026 Ieva Jodkaitė</p>
     </footer>
 

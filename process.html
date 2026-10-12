@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>veitaite</title>
+    <title>Bombinis pradžiamokslis</title>
+    <link rel="icon" type="image/x-icon" href="res/Asa.jpg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <header>
-        <h2>Title</h2>
+        <h2>Bombinis svetainių pradžiamokslis</h2>
 
         <!-- nav header -->
         <nav class="top-nav" aria-label="Pagrindinė navigacija">
@@ -26,12 +27,12 @@
     <div class="page-layout">
 
         <!-- nav side bar-->
-        <nav class="side-nav" aria-label="Šio puslapio skyriai">
+        <nav class="side-nav" aria-label="Skyriai">
             <h3>Šiame puslapyje</h3>
             <ul>
-                <li><a href="#intro">Įvadas</a></li>
-                <li><a href="#code-example">Kodo pavyzdys</a></li>
-                <li><a href="#extra">Papildoma informacija</a></li>
+                <li><a href="#intro">Autorius</a></li>
+                <li><a href="#structure">Struktūros schema</a></li>
+                <li><a href="#extra">Bendros mintys</a></li>
             </ul>
         </nav>
 
@@ -39,29 +40,54 @@
         <main>
             <article>
                 <section id="intro">
-                    <h1>Home</h1>
-                    <p>This is a home page.</p>
+                    <h1>Šis nuostabus puslapis buvo sukurtas I.J.</h1>
                 </section>
 
-                <section id="code-example">
-                    <h2>Kodo pavyzdys</h2>
-                    <pre><code>// Visi bus nubausti >:]
-public String funkcija(String klausimelis) {
-    return "Whaowoowow";
-}</code></pre>
+                <section id="structure">
+                    <h2>Struktūros schema</h2>
+                    <pre><code>
+svetaine_veitaite
+│
+├── css
+│   └── styles.css
+│
+├── documents
+│   └── development-report.pdf
+│
+├── pages
+│   ├── css-basics.html
+│   ├── gallery.html
+│   ├── html-basics.html
+│   └── javascript-basics.html
+│
+├── res
+│   └── ...daug vaizdų
+│
+├── scripts
+│   └── button_logic.js
+│
+├── index.html
+├── process.html
+└── README.md
+
+</code></pre>
                 </section>
 
                 <section id="extra">
-                    <h2>Papildoma informacija</h2>
-                    <p>Čia gali pateikti papildomą informaciją.</p>
+                    <h2>Bendros mintys</h2>
+                    <p>Labai patiko ir labai nekenčiau sav3s ir svetainės ir šio dalyko. Iš apimties galit matyt, kad stengiaus, net jei ir ne viskas pavyko.</p>
+                    <p><i>Šoviau į žvaigždes, pasiekiau mėnulį</i></p>
+                    <br>
+                    <a href="documents/development-report.pdf" download class="download-btn">Development report</a>
                 </section>
+
+                
             </article>
         </main>
 
         <!-- anime girl gif bar -->
         <aside>
-            <p>hello</p>
-            <img src="res/nezuko.gif" alt="Nezuko GIF">
+            <img src="res/rei.gif" alt="Evangelion GIF">
         </aside>
 
     </div>

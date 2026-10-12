@@ -1,16 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>veitaite</title>
+    <title>Bombinis pradžiamokslis</title>
+    <link rel="icon" type="image/x-icon" href="res/Asa.jpg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <header>
-        <h2>Title</h2>
+        <h2>Bombinis svetainių pradžiamokslis</h2>
 
         <!-- nav header -->
         <nav class="top-nav" aria-label="Pagrindinė navigacija">
@@ -32,6 +32,7 @@
                 <li><a href="#intro">Apie</a></li>
                 <li><a href="#learn">Ko išmoksite?</a></li>
                 <li><a href="#structure">Svetainės puslapiai</a></li>
+                <li><a href="#survey">Apklausa</a></li>
                 <li><a href="#outro">Autorės žodžiai</a></li>
             </ul>
         </nav>
@@ -70,11 +71,82 @@
                     </ol>
                     <br>
                     <hr>
-                </section>                
+                </section>
+
+                <section id="survey">
+                    <h1>Apklausa</h1>
+                    <p>Padėk man patobulinti svetainę ir užpildyk trumpą apklausą :]</p>
+
+                    <form>
+
+                        <p>
+                            <label for="vardas">Vardas:</label><br>
+                            <input type="text" id="vardas" name="vardas" placeholder="Tavo vardas">
+                        </p>
+
+                        <p>
+                            <label for="pastas">El. paštas:</label><br>
+                            <input type="email" id="pastas" name="pastas" placeholder="vardas@pastas.lt">
+                        </p>
+
+                        <fieldset>
+                            <legend>Kaip vertini šią bombinę svetainę?</legend>
+                            <input type="radio" id="ivertinimas1" name="ivertinimas" value="1">
+                            <label for="ivertinimas1">1</label>
+                            <input type="radio" id="ivertinimas2" name="ivertinimas" value="2">
+                            <label for="ivertinimas2">2</label>
+                            <input type="radio" id="ivertinimas3" name="ivertinimas" value="3">
+                            <label for="ivertinimas3">3</label>
+                            <input type="radio" id="ivertinimas4" name="ivertinimas" value="4">
+                            <label for="ivertinimas4">4</label>
+                            <input type="radio" id="ivertinimas5" name="ivertinimas" value="5">
+                            <label for="ivertinimas5">5</label>
+                        </fieldset>
+
+                        <br>
+
+                        <fieldset>
+                            <legend>Kokie puslapiai labiausiai patiko?</legend>
+                            <input type="checkbox" id="naudingas_html" name="naudingas" value="html">
+                            <label for="naudingas_html">HTML</label>
+                            <input type="checkbox" id="naudingas_css" name="naudingas" value="css">
+                            <label for="naudingas_css">CSS</label>
+                            <input type="checkbox" id="naudingas_js" name="naudingas" value="js">
+                            <label for="naudingas_js">JS</label>
+                            <input type="checkbox" id="naudingas_procesas" name="naudingas" value="procesas">
+                            <label for="naudingas_procesas">Procesas</label>
+                            <input type="checkbox" id="naudingas_galerija" name="naudingas" value="galerija">
+                            <label for="naudingas_galerija">Galerija</label>
+                        </fieldset>
+
+                        <p>
+                            <label for="lygis">Koks tavo patirties lygis? Ir nesakyk viska moki žinau kad meluoji.</label><br>
+                            <select id="lygis" name="lygis">
+                                <option value="">Pasirink!</option>
+                                <option value="pradedantysis">Noob</option>
+                                <option value="vidutinis">Šį tą moku</option>
+                                <option value="pazenges">5</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="komentaras">Kažką pasiūlyk draugas :]</label><br>
+                            <textarea id="komentaras" name="komentaras" rows="4" cols="40" placeholder="Ką pagerinti? Ko trūksta?"></textarea>
+                        </p>
+
+                        <button type="button">Siųsti</button>
+                    </form>
+
+                    <br>
+                    <hr>
+                </section>
 
                 <section id="outro">
                     <h1>Autorės žodžiai</h1>
                     <p>Ši svetainė toli gražu nėra tobula, tačiau siekiu, jog ją skaitydami išmoksite naudingų tinklapio kūrimo žinių ar bent pasisemsite idėjų iš svetainės dizaino ir funkcijų!</p>
+                    <p>Taip pat noriu atsiprašyti už nešvankius žodelius ir komentarus kode kuriuos galimai pamiršau išimti. Darbas paskutine dieną vyko, kad ir ankščiau pradėjau :[</p>
+                    <p>DI buvo naudotas tik taisant JS metodus kaip last ditch effort.</p>
+                    <p>.gif ir galerijos vaizdam licenzijos neturiu, bet jie yra fair use nes čia mokymosi non profit tinklapis!</p>
                     <br>
                 </section>
 
@@ -83,7 +155,7 @@
 
         <!-- anime girl gif bar -->
         <aside>
-            <img src="res/megumin.gif" alt="Megumin GIF">
+            <img src="res/dance.gif" alt="mappa CSM gif">
         </aside>
 
     </div>
@@ -92,8 +164,6 @@
         <p> <a href="mailto:ieva.jodkaite@knf.vu.lt">Susisiek :] </a> </p>
         <p>© 2026 Ieva Jodkaitė</p>
     </footer>
-
-
 
 </body>
 </html>
